@@ -105,6 +105,9 @@ def getTxMsg(payload):
 def getAddrMsg():
     return makeMessage(magic, 'getaddr', '')
 
+def getVerackMsg():
+    return makeMessage(magic, '<fixme>', '')
+
 class TestParsing(unittest.TestCase):        
     def test_processChunk(self):
         header = ('\xf9\xbe\xb4\xd9\x76\x65\x72\x73\x69\x6f\x6e\x00\x00\x00\x00\x00' +
