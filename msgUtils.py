@@ -106,7 +106,7 @@ def getAddrMsg():
     return makeMessage(magic, 'getaddr', '')
 
 def getVerackMsg():
-    return makeMessage(magic, '<fixme>', '')
+    return makeMessage(magic, 'verack', '')
 
 class TestParsing(unittest.TestCase):        
     def test_processChunk(self):

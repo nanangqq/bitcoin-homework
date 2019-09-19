@@ -6,14 +6,16 @@ import msgUtils
 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.connect(("184.155.9.47", 8333))
+#sock.connect(("184.155.9.47", 8333))
+#sock.connect(("199.247.18.168", 8333))
+sock.connect(("13.125.187.220", 8333))
 
 sock.send(msgUtils.getVersionMsg())
 
 while 1:
     header = sock.recv(24)
     if len(header) == 0: break
-    magic, cmd, payload_len, checksum = struct.unpack('L12sL4s', header)
+    magic, cmd, payload_len, checksum = struct.unpack('<L12sL4s', header)
     buf = ''
 
     while payload_len > 0:
